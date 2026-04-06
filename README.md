@@ -166,6 +166,10 @@ At a minimum, expect:
 - `sudo` access on the Pi for package installation and firewall setup
 - Ollama installed on a separate machine with enough RAM/VRAM for your chosen model
 
+## License
+
+This repository is licensed under the MIT License. See `LICENSE` for the full text.
+
 ## Summary
 
 In practical terms, `openclaw-rpi` is a reproducible setup kit for a Raspberry Pi-hosted OpenClaw instance that talks to an Ollama server on your LAN, with configuration templates, deployment helpers, and basic network hardening included.
