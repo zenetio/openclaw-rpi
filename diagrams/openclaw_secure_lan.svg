@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <style>
+      .title{font:700 28px Arial,sans-serif;fill:#0f172a}
+      .label{font:600 18px Arial,sans-serif;fill:#0f172a}
+      .small{font:400 15px Arial,sans-serif;fill:#334155}
+      .box{fill:#f8fafc;stroke:#1e293b;stroke-width:2;rx:18;ry:18}
+      .accent{fill:#e0f2fe;stroke:#0369a1;stroke-width:2;rx:18;ry:18}
+      .security{fill:#ecfccb;stroke:#4d7c0f;stroke-width:2;rx:18;ry:18}
+      .arrow{stroke:#475569;stroke-width:3;marker-end:url(#m)}
+    </style>
+    <marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <text x="60" y="60" class="title">OpenClaw Secure LAN Architecture</text>
+  <rect x="70" y="120" width="240" height="120" class="box"/>
+  <text x="100" y="165" class="label">Allowed Client Devices</text>
+  <text x="105" y="195" class="small">PC, laptop, phone, other RPi</text>
+  <text x="105" y="220" class="small">Dashboard access over LAN</text>
+
+  <rect x="390" y="120" width="220" height="120" class="security"/>
+  <text x="445" y="165" class="label">UFW Allow-List</text>
+  <text x="425" y="195" class="small">Only trusted IPs may connect</text>
+  <text x="435" y="220" class="small">Port 18789/TCP</text>
+
+  <rect x="680" y="120" width="220" height="120" class="security"/>
+  <text x="725" y="165" class="label">Gateway Token</text>
+  <text x="715" y="195" class="small">Dashboard URL carries #token</text>
+  <text x="730" y="220" class="small">Strong random secret</text>
+
+  <rect x="950" y="100" width="180" height="160" class="accent"/>
+  <text x="982" y="155" class="label">OpenClaw</text>
+  <text x="985" y="185" class="small">Raspberry Pi</text>
+  <text x="968" y="210" class="small">bind=lan, auth=token</text>
+  <text x="965" y="235" class="small">denyCommands enabled</text>
+
+  <rect x="920" y="370" width="210" height="150" class="box"/>
+  <text x="980" y="415" class="label">Ollama</text>
+  <text x="945" y="445" class="small">Windows 11 PC</text>
+  <text x="935" y="470" class="small">qwen2.5:7b via /v1 endpoint</text>
+  <text x="945" y="495" class="small">16K context configured</text>
+
+  <line x1="310" y1="180" x2="390" y2="180" class="arrow"/>
+  <line x1="610" y1="180" x2="680" y2="180" class="arrow"/>
+  <line x1="900" y1="180" x2="950" y2="180" class="arrow"/>
+  <line x1="1040" y1="260" x2="1040" y2="370" class="arrow"/>
+
+  <text x="60" y="620" class="small">Recommended model note: qwen2.5:7b reliably completes OpenClaw tool loops, while llama3.2 may stop after tool output and fail to emit the final plain-text answer.</text>
+</svg>
