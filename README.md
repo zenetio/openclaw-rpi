@@ -44,7 +44,7 @@ The intended architecture is:
   - `deploy_rpi_openclaw.sh`: writes the runtime config, installs OpenClaw if needed, applies firewall rules, and starts the dashboard
   - `setup_firewall.sh`: installs/configures UFW and allows only trusted client IPs to reach the OpenClaw dashboard port
   - `start_openclaw_dashboard.sh`: restarts the OpenClaw dashboard on the Pi
-  - `windows/start_ollama_lan_16k.ps1`: starts Ollama on Windows bound to `0.0.0.0:11434` with a larger context length
+  - `windows/start_ollama_lan_32k.ps1`: starts Ollama on Windows bound to `0.0.0.0:11434` with a larger context length
 - `diagrams/`
   - architecture references used by the documentation
 
@@ -80,7 +80,7 @@ If you already know the target IPs and want the shortest path to a working setup
 1. On the Windows PC running Ollama, start the server with LAN binding:
 
   ```powershell
-  .\scripts\windows\start_ollama_lan_16k.ps1
+  .\scripts\windows\start_ollama_lan_32k.ps1
   ```
 
 2. Pull at least one model in Ollama, for example:
