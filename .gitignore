@@ -1,0 +1,17 @@
+# OS-generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor workspace settings
+.vscode/
+
+# Local logs and scratch files
+*.log
+*.tmp
+
+# Local deployment secrets and machine-specific config copies
+configs/trusted_devices.env
+configs/trusted_devices.local.env
+configs/*.private.env
+configs/openclaw.local.json
