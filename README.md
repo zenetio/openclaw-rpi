@@ -73,6 +73,49 @@ The deployment script fills those placeholders from `configs/trusted_devices.exa
 4. Run the deployment script on the Raspberry Pi.
 5. Access the OpenClaw dashboard from an allowed device using the tokenized URL.
 
+## Quick Start
+
+If you already know the target IPs and want the shortest path to a working setup:
+
+1. On the Windows PC running Ollama, start the server with LAN binding:
+
+  ```powershell
+  .\scripts\windows\start_ollama_lan_16k.ps1
+  ```
+
+2. Pull at least one model in Ollama, for example:
+
+  ```powershell
+  ollama pull qwen2.5:7b
+  ```
+
+3. On the Raspberry Pi, clone this repository and customize the example env file:
+
+  ```bash
+  cp configs/trusted_devices.example.env configs/trusted_devices.env
+  ```
+
+4. Edit `configs/trusted_devices.env` and set:
+
+  - `TRUSTED_OPENCLAW_CLIENTS`
+  - `PC_OLLAMA_IP`
+  - `OPENCLAW_TOKEN`
+
+5. Run the deployment script on the Raspberry Pi:
+
+  ```bash
+  chmod +x scripts/deploy_rpi_openclaw.sh
+  ./scripts/deploy_rpi_openclaw.sh
+  ```
+
+6. Open the dashboard from an allowed device:
+
+  ```text
+  http://<RPI_IP>:18789/#token=<OPENCLAW_TOKEN>
+  ```
+
+For a fuller walkthrough, including onboarding details and troubleshooting, use `docs/open_claw_ollama_lan_setup_guide.md`.
+
 ## Recommended Entry Points
 
 If you are setting this up from scratch, start here:
