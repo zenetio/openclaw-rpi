@@ -132,7 +132,7 @@ If you already understand the setup and just want to apply the config on the Pi,
 
 If you need to start Ollama on Windows so the Pi can reach it over the network, use:
 
-- `scripts/windows/start_ollama_lan_16k.ps1`
+- `scripts/windows/start_ollama_lan_32k.ps1`
 
 ## Configuration Notes
 
