@@ -109,10 +109,10 @@ sudo ufw allow 22
 Replace IPs with your actual devices:
 
 ```bash
-sudo ufw allow from 192.168.105.100 to any port 18789   # PC
-sudo ufw allow from 192.168.105.101 to any port 18789   # Laptop
-sudo ufw allow from 192.168.105.102 to any port 18789   # Phone
-sudo ufw allow from 192.168.105.103 to any port 18789   # Other RPi
+sudo ufw allow from 192.168.100.100 to any port 18789   # PC
+sudo ufw allow from 192.168.100.101 to any port 18789   # Laptop
+sudo ufw allow from 192.168.100.102 to any port 18789   # Phone
+sudo ufw allow from 192.168.100.103 to any port 18789   # Other RPi
 ```
 
 ### Block all others
@@ -148,7 +148,7 @@ http://<RPI_IP>:18789/#token=YOUR-TOKEN
 Example:
 
 ```
-http://192.168.105.101:18789/#token=c8f4a1b9d3e7...
+http://192.168.100.101:18789/#token=c8f4a1b9d3e7...
 ```
 
 ---
@@ -161,7 +161,7 @@ Configure static DHCP in your router.
 ### Option B — Allow subnet (Less secure)
 
 ```bash
-sudo ufw allow from 192.168.105.0/24 to any port 18789
+sudo ufw allow from 192.168.100.0/24 to any port 18789
 ```
 
 ---

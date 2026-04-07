@@ -144,7 +144,7 @@ Example result:
 ## Step 6 — Test from Raspberry Pi
 
 ```bash
-curl http://192.168.105.103:11434/api/tags
+curl http://192.168.100.103:11434/api/tags
 ```
 
 If this works → networking is OK
@@ -317,9 +317,9 @@ Your PC's firewall might be blocking the connection.
 **3. Verify Connectivity from Pi**
 Run this command from your Raspberry Pi to test the connection:
 ```bash
-curl -v http://192.168.105.103:11434/api/tags
+curl -v http://192.168.100.103:11434/api/tags
 ```
-*(Replace `192.168.105.103` with your actual PC IP)*
+*(Replace `192.168.100.103` with your actual PC IP)*
 - If this times out, it's likely a firewall issue or wrong IP.
 - If it works, OpenClaw should work too.
 
@@ -328,7 +328,7 @@ This usually means Node.js is trying to use a proxy.
 - **Check Proxy:** Node.js respects `HTTP_PROXY` / `http_proxy`.
 - **Fix:** Add your PC's IP to the `NO_PROXY` environment variable before running OpenClaw:
   ```bash
-  export NO_PROXY=192.168.105.103
+   export NO_PROXY=192.168.100.103
   openclaw onboard ...
   ```
 - **Check Model Name:** You requested `llama3.1:8b` but your `curl` output might show it's missing (e.g., you only have `llama3.2`). Using a missing model ID can sometimes look like a connection failure during verification. Try using a model that appears in your `curl` list.
@@ -357,7 +357,7 @@ If systemd still fails, configure it first, then run the gateway manually:
    ```bash
    openclaw onboard --non-interactive \
      --auth-choice ollama \
-     --custom-base-url "http://192.168.105.103:11434" \
+       --custom-base-url "http://192.168.100.103:11434" \
      --custom-model-id "llama3.2" \
      --gateway-bind lan \
      --accept-risk
@@ -413,7 +413,7 @@ Fix it in this order:
        "models": {
           "providers": {
              "ollama": {
-                "baseUrl": "http://192.168.105.103:11434",
+                "baseUrl": "http://192.168.100.103:11434",
                 "api": "ollama",
                 "models": [
                    {
