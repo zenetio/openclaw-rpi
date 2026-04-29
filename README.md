@@ -166,6 +166,10 @@ At a minimum, expect:
 - `sudo` access on the Pi for package installation and firewall setup
 - Ollama installed on a separate machine with enough RAM/VRAM for your chosen model
 
+## Improvements
+
+- You can add the **lossless-claw** plugin to improve memory management in your OpenClaw deployment.
+
 ## License
 
 This repository is licensed under the MIT License. See `LICENSE` for the full text.
